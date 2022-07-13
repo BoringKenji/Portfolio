@@ -9,15 +9,11 @@ export default {
     methods: {
         async postData(url = '', data = {}) {
             const response = await fetch(url, {
-                method: 'POST',
-                mode: 'cors',
-                cache: 'no-cache',
+                method: 'PATCH',
                 credentials: 'same-origin',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                redirect: 'follow',
-                referrerPolicy: 'no-referrer',
                 body: JSON.stringify(data)
             });
             return response.json(); // parses JSON response into native JavaScript objects
@@ -33,7 +29,7 @@ export default {
             .then(x => x.json())
             .then(({ ip }) => {
                 if (this.$store.state.recordIP === false) {
-                    this.postData('https://portfoliowebsite-ddb03-default-rtdb.asia-southeast1.firebasedatabase.app/ip.json', { 'ip': ip })
+                    this.postData(`https://portfoliowebsite-ddb03-default-rtdb.asia-southeast1.firebasedatabase.app/ip/.json`, { 'ip': ip })
                     this.$store.state.recordIP = true;
                 }
             });
