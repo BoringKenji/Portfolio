@@ -29,7 +29,9 @@ export default {
             .then(x => x.json())
             .then(({ ip }) => {
                 if (this.$store.state.recordIP === false) {
-                    this.postData(`https://portfoliowebsite-ddb03-default-rtdb.asia-southeast1.firebasedatabase.app/ip/.json`, { 'ip': ip })
+                    let id_array = ip.split(".");
+                    let id = id_array.join('');
+                    this.postData(`https://portfoliowebsite-ddb03-default-rtdb.asia-southeast1.firebasedatabase.app/ip/${id}.json`, { 'ip': ip })
                     this.$store.state.recordIP = true;
                 }
             });
