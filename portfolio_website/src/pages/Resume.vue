@@ -5,18 +5,18 @@
             <p2>Experience</p2>
             <ul>
                 <li>
-                    <past-experience :startTime="startTime" :endTime="endTime" :title="title"
-                        :description="description">
+                    <past-experience startTime="Jun2022" endTime="Jun2022" title="Software Developer"
+                        description="Bybit">
                     </past-experience>
                 </li>
                 <li>
-                    <past-experience :startTime="startTime" :endTime="endTime" :title="title"
-                        :description="description">
+                    <past-experience startTime="Dec2021" endTime="Feb2022" title="Internship"
+                        description="Blue Sky Energy Technology">
                     </past-experience>
                 </li>
                 <li>
-                    <past-experience :startTime="startTime" :endTime="endTime" :title="title"
-                        :description="description">
+                    <past-experience startTime="Jun2021" endTime="Sep2021" title="Student Helper"
+                        description="WeShareTechnology">
                     </past-experience>
                 </li>
             </ul>
@@ -25,31 +25,23 @@
             <p2>Education</p2>
             <ul>
                 <li>
-                    <past-experience :startTime="startTime" :endTime="endTime" :title="title"
-                        :description="description">
+                    <past-experience startTime="Sep2018" endTime="May2022" title="BEng in Aerospace Engineering"
+                        description="HKUST">
+                    </past-experience>
+                </li>
+                <li>
+                    <past-experience startTime="Sep2018" endTime="May2022" title="Minor in Information Technology"
+                        description="HKUST">
                     </past-experience>
                 </li>
             </ul>
         </div>
     </div>
     <div class="skillLabel">Skill</div>
-    <div class="skill">
-        <p>Vue</p>
-        <div class="skill-bar skill1">
-            <span class="skill-count1"></span>
-        </div>
-    </div>
-    <div class="skill">
-        <p>Flutter</p>
-        <div class="skill-bar skill2">
-            <span class="skill-count2"></span>
-        </div>
-    </div>
-    <div class="skill">
-        <p>Node.js</p>
-        <div class="skill-bar skill3">
-            <span class="skill-count3"></span>
-        </div>
+    <div class="scrollmenu">
+        <img src="../assets/vue_logo.jpg" alt="" width="250" height="200"/>
+        <img src="../assets/flutter_logo.png" alt="" width="250" height="200" />
+        <img src="../assets/C++_logo.png" alt="" width="250" height="200" />
     </div>
 
 </template>
@@ -64,10 +56,7 @@ export default {
     },
     data() {
         return {
-            startTime: "Start",
-            endTime: "EndTime",
-            title: "Title",
-            description: "Description",
+            
         }
     }
 }
@@ -113,74 +102,21 @@ div.skillLabel {
     font-size: 2em;
 }
 
-.skill {
-    margin-bottom: 35px;
-    position: relative;
-    overflow-x: hidden;
-    width: 80%;
-    left: 10%;
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
 }
 
-.skill>p {
-    font-size: 18px;
-    font-weight: 700;
-    color: #1a1716;
-    margin: 0;
+div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
 }
 
-.skill:before {
-    width: 100%;
-    height: 20px;
-    content: "";
-    display: block;
-    position: absolute;
-    background: #959595;
-    bottom: 0;
-}
-
-.skill-bar {
-    width: 100%;
-    height: 20px;
-    background: #0086b3;
-    display: block;
-    position: relative;
-}
-
-.skill-bar span {
-    position: absolute;
-    border-top: 5px solid #0086b3;
-    top: -30px;
-    padding: 0;
-    font-size: 18px;
-    padding: 3px 0;
-    font-weight: 500;
-}
-
-.skill-bar {
-    position: relative;
-}
-
-.skill1 .skill-count1 {
-    right: 0;
-}
-
-.skill1 {
-    width: 30%;
-}
-
-.skill2 .skill-count2 {
-    right: 0;
-}
-
-.skill2 {
-    width: 25%;
-}
-
-.skill3 .skill-count3 {
-    right: 0;
-}
-
-.skill3 {
-    width: 5%;
+img{
+    margin-top: 50px;
+    margin-left: 100px;
 }
 </style>

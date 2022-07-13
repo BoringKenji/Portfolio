@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
         <h3 class="Title">{{ title }}</h3>
-        <h4 class="TimeLine">{{ duration }}</h4>
         <h4 class="content">{{ description }}</h4>
+        <h4 class="TimeLine">{{ duration }}</h4>
     </div>
 </template>
 
@@ -24,10 +24,10 @@ p {
 }
 
 /* no grid support? */
-.TimeLine {
+.content {
     float: left;
     width: 19.1489%;
-    color: #0086b3;
+
 }
 
 .Title {
@@ -53,12 +53,12 @@ p {
     margin-bottom: 10px;
 }
 
-.content {
+.TimeLine {
     grid-column: 1 / -1;
     /* needed for the floated layout */
     clear: both;
     font-size: 0.8em;
-
+    color: #0086b3;
 }
 
 
