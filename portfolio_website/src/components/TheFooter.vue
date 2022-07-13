@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">Footer</div>
+    <div class="footer">{{this.$store.state.View}} people view this website</div>
 </template>
 
 <script></script>
@@ -10,5 +10,6 @@
     bottom: 0;
     width: 100%;
     background-color: #f5f5f5;
+    text-align: right;
 }
 </style>
